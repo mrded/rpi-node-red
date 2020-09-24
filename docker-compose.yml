@@ -1,5 +1,10 @@
 version: "3"
 services:
+  influx:
+    image: influxdb:1.7 
+    restart: always
+    volumes:
+      - ./influxdb:/var/lib/influxdb 
   mDNS:
     image: ydkn/avahi:latest
   nodeRed:
