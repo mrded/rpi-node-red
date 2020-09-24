@@ -1,0 +1,8 @@
+version: "3"
+services:
+  nodeRed:
+    image: nodered/node-red:latest
+    ports:
+      - "80:1880"
+    volumes:
+      - /home/mrded/.node-red:/data
