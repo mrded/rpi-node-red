@@ -1,5 +1,7 @@
 version: "3"
 services:
+  mDNS:
+    image: ydkn/avahi:latest
   nodeRed:
     image: nodered/node-red:latest
     ports:
