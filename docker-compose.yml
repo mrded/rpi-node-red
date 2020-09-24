@@ -6,10 +6,14 @@ services:
     volumes:
       - ./influxdb:/var/lib/influxdb 
   mDNS:
-    image: ydkn/avahi:latest
+    image: ydkn/avahi:latest 
+    restart: always
   nodeRed:
-    image: nodered/node-red:latest
+    image: nodered/node-red:1.1.3-minimal
+    restart: always
+    depends_on:
+      - influx 
     ports:
       - "80:1880"
     volumes:
-      - /home/mrded/.node-red:/data
+      - ./node-red:/data 
