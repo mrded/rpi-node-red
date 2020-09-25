@@ -1,8 +1,10 @@
 version: "3"
 services:
-  influx:
+  influxdb:
     image: influxdb:1.7 
     restart: always
+    environment:
+      INFLUXDB_DB: 'home'
     volumes:
       - ./influxdb:/var/lib/influxdb 
   mDNS:
@@ -11,8 +13,9 @@ services:
   nodeRed:
     image: nodered/node-red:1.1.3-minimal
     restart: always
+    command: npm install --unsafe-perm --no-update-notifier --no-fund --only=production
     depends_on:
-      - influx 
+      - influxdb
     ports:
       - "80:1880"
     volumes:
