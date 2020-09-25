@@ -6,7 +6,7 @@ services:
     environment:
       INFLUXDB_DB: 'home'
     volumes:
-      - ./influxdb:/var/lib/influxdb 
+      - /mnt/hdd/influxdb:/var/lib/influxdb 
   mDNS:
     image: ydkn/avahi:latest 
     restart: always
@@ -19,4 +19,4 @@ services:
     ports:
       - "80:1880"
     volumes:
-      - ./node-red:/data 
+      - /mnt/hdd/node-red:/data 
