@@ -18,10 +18,12 @@ services:
     environment:
       INFLUXDB_DB: 'home'
     volumes:
-      - /mnt/hdd/influxdb:/var/lib/influxdb 
+      - /mnt/hdd/influxdb/data:/var/lib/influxdb
+
   mDNS:
     image: ydkn/avahi:latest 
     restart: always
+
   nodeRed:
     image: nodered/node-red:1.1.3-minimal
     restart: always
@@ -31,4 +33,4 @@ services:
     ports:
       - "80:1880"
     volumes:
-      - /mnt/hdd/node-red:/data 
+      - ./node-red:/data 
