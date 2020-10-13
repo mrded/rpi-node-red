@@ -19,6 +19,7 @@ services:
       INFLUXDB_DB: 'home'
     volumes:
       - /mnt/hdd/influxdb/data:/var/lib/influxdb
+      - /mnt/hdd/influxdb/backup:/tmp/backup
 
   mDNS:
     image: ydkn/avahi:latest 
