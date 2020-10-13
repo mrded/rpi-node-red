@@ -7,8 +7,8 @@ services:
       - influxdb
     volumes:
       - /mnt/hdd/grafana/data:/var/lib/grafana 
-      - /mnt/hdd/grafana/logs:/var/log/grafana 
-      - /mnt/hdd/grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/logs:/var/log/grafana 
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
     ports:
       - "3000:3000"
 
