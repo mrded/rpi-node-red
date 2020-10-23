@@ -10,3 +10,6 @@ Node red setup for home automation
 ## Troubleshooting
 
 Node-red data dir needs to be `1000:1000`. This can be forced by the command `sudo chown -R 1000:1000 ./node-red`
+
+## TODO
+- [ ] prometheus + grafana
