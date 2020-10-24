@@ -13,3 +13,4 @@ Node-red data dir needs to be `1000:1000`. This can be forced by the command `su
 
 ## TODO
 - [ ] prometheus + grafana
+- [ ] [docker volumes](https://docs.docker.com/storage/volumes/)
