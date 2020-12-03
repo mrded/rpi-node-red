@@ -11,6 +11,21 @@ services:
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini
     ports:
       - "3000:3000"
+      
+  docker-host:
+    image: qoomon/docker-host:2.5.0
+    cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
+    restart: on-failure
+
+  prometheus:
+    image: prom/prometheus:v2.22.0
+    depends_on: [ docker-host ]
+    restart: always
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /mnt/hdd/prometheus/data:/prometheus
 
   influxdb:
     image: influxdb:1.7 
