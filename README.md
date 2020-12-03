@@ -9,6 +9,8 @@ sudo apt-get install prometheus-node-exporter
 curl localhost:9100/metrics | less
 ```
 
+[Node Exporter dashboard](https://grafana.com/grafana/dashboards/11074)
+
 ## Usage
 
 - Start: `make up`
