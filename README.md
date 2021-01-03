@@ -18,9 +18,7 @@ curl localhost:9100/metrics | less
 - Backup: `make backup`
 
 ## Troubleshooting
-
-Node-red data dir needs to be `1000:1000`. This can be forced by the command `sudo chown -R 1000:1000 ./node-red`
+???
 
 ## TODO
-- [ ] prometheus + grafana
-- [ ] [docker volumes](https://docs.docker.com/storage/volumes/)
+- [X] prometheus + grafana

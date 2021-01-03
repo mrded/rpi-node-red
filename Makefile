@@ -14,7 +14,7 @@ down:
 restart: down up
 
 backup:
-	docker-compose exec -T influxdb influxd backup -portable -database home "/tmp/backup/$(date +'%Y-%m-%d')"
+	echo 'TODO: make a backup'
 
 clean:
 	docker-compose down --rmi all
